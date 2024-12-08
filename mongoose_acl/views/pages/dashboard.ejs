@@ -5,13 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+
 </head>
 
 <body>
-    <h3>Dashboard</h3>
 
     <%- include("partials/navbar", { user }) %>
 
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                /* Better default font */
+            }
+
+            .header-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                background-color: #000000;
+                padding: 20px;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                margin: 20px 0;
+                padding: 0;
+                border-radius: 10px;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+
+            a {
+                display: inline-block;
+                padding: 10px 20px;
+                text-decoration: none;
+                color: white;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 1.1rem;
+                border: 2px solid white;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+
+            }
+
+            a:hover {
+                background-color: white;
+                color: black;
+            }
+
+            nav ul li a {
+                width: auto;
+                height: auto;
+            }
+
+            h3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
 </body>
 
 </html>

@@ -161,3 +161,4 @@ app.get('/', (req, res) => {
 app.listen(3010, () => {
 	console.log('Server starrted at port 3010');
 });
+app.use(express.static('./public/img/monument-valley-5499156_1920.jpg'));

@@ -15,14 +15,100 @@
             <input type="hidden" name="id" value="<%= userToEdit._id %>">
             Name: <input type="text" name="name" id="" value="<%= userToEdit.name %>">
             <br><br>
-            Surname: <input type="text" name="surname" id="" value="<%= userToEdit.surname %>" >
+            Surname: <input type="text" name="surname" id="" value="<%= userToEdit.surname %>">
             <br><br>
-            Email: <input type="text" name="email" id="" value="<%= userToEdit.email %>"> 
+            Email: <input type="text" name="email" id="" value="<%= userToEdit.email %>">
             <br><br>
             <!-- Password: <input type="text" name="password" id=""> -->
             <br><br>
-           <button type="submit">Save User</button>
+            <button type="submit">Save User</button>
         </form>
+        <style>
+            /* General Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                padding: 20px;
+            }
+
+            h3 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            form {
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            form label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            form input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            form button {
+                display: inline-block;
+                width: 100%;
+                padding: 10px;
+                background-color: #007BFF;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            form button:hover {
+                background-color: #0056b3;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+
+            nav ul li a {
+                text-decoration: none;
+                padding: 10px 20px;
+                color: white;
+                background-color: #007BFF;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            nav ul li a:hover {
+                background-color: #0056b3;
+            }
+        </style>
 </body>
 
 </html>

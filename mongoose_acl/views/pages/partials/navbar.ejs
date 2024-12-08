@@ -1,32 +1,35 @@
 <div class="header">
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <% if(user && user.email) { %>
-                <li><a href="/dashboard">dashboard</a></li>
-                <li><a href="/logout">logout</a></li>
-                <%} else {%>
-                    <li><a href="/login">login</a></li>
-                    <li><a href="/register">register</a></li>
-                    <%} %>
-        </ul>
-    </nav>
-    <% if(user && user.email && user.role === "admin") { %>
+    <div class="header-background"></div>
+    <div class="header-content">
         <nav>
-            Admin menu:
             <ul>
-                <li><a href="/admin/users">users</a></li>
+                <li><a href="/">Home</a></li>
+                <% if(user && user.email) { %>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <% } else { %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                        <% } %>
             </ul>
         </nav>
-    <%} %>
+
+        <% if(user && user.email && user.role==="admin" ) { %>
+            <nav>
+
+                <ul>
+                    <li><a href="/admin/users">Users</a></li>
+                </ul>
+            </nav>
+            <% } %>
+    </div>
 </div>
 
 <p>
     <% if(user && user.email) { %>
+        <h3>Dashboard</h3>
         <h3>
-            <%= user.email%> is logged in!
+            <%= user.email %> is logged in!
         </h3>
-        <%} %>
+        <% } %>
 </p>

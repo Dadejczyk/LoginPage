@@ -8,41 +8,167 @@
 </head>
 
 <body>
-    <h3>Admin: users List</h3>
 
-    <%- include("../partials/navbar.ejs", {user} ) %>
 
-        <p>
-            <% if(users) { %>
-                <table>
-                    <tr>
-                        <th>_id</th>
-                        <th>name</th>
-                        <th>surname</th>
-                        <th>eamil</th>
-                        <th>role</th>
-                        <th>actions</th>
-                    </tr>
+    <body>
 
-                    <% for(let i=0; i< users.length; i++) {%>
+        <%- include("../partials/navbar.ejs", { user }) %>
 
-                        <tr>
-                            <td><%= users[i]._id %></td>
-                            <td><%= users[i].name %></td>
-                            <td><%= users[i].surname %></td>
-                            <td><%= users[i].email %></td>
-                            <td><%= users[i].role %></td>
-                            <td><a href="/admin/users/edit/<%= users[i].id %>">edit</a></td>
-                        </tr>
+            <h3>Admin: Users List</h3>
 
-                    <% } %>
+            <p>
+                <% if(users) { %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>_id</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i=0; i < users.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= users[i]._id %>
+                                    </td>
+                                    <td>
+                                        <%= users[i].name %>
+                                    </td>
+                                    <td>
+                                        <%= users[i].surname %>
+                                    </td>
+                                    <td>
+                                        <%= users[i].email %>
+                                    </td>
+                                    <td>
+                                        <%= users[i].role %>
+                                    </td>
+                                    <td>
+                                        <a href="/admin/users/edit/<%= users[i]._id %>">Edit</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <p>No users found.</p>
+                        <% } %>
+            </p>
 
-                </table>
-                <% } %>
-        </p>
+            <div class="add-user">
+                <a href="/admin/users/add">Add User</a>
+            </div>
 
-        <a href="/admin/users/add">Add User:</a>
 
-</body>
+
+            <style>
+                /* General Reset */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    color: #333;
+                    padding: 20px;
+                }
+
+                /* Navbar */
+                nav ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 20px 0;
+                    padding: 0;
+                }
+
+                nav ul li {
+                    margin: 0 15px;
+                }
+
+                nav ul li a {
+                    text-decoration: none;
+                    padding: 10px 20px;
+                    color: white;
+                    background-color: #007BFF;
+                    border-radius: 5px;
+                    transition: background-color 0.3s ease;
+                }
+
+                nav ul li a:hover {
+                    background-color: #0056b3;
+                }
+
+                /* Main Content */
+                h3 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    background-color: white;
+                    text-align: left;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+
+                thead {
+                    background-color: #007BFF;
+                    color: white;
+                }
+
+                th,
+                td {
+                    padding: 10px 15px;
+                    border: 1px solid #ddd;
+                }
+
+                th {
+                    text-transform: uppercase;
+                }
+
+
+                /* Buttons */
+                a {
+                    text-decoration: none;
+                    color: white;
+                    background-color: #28a745;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                    transition: background-color 0.3s ease;
+                }
+
+                a:hover {
+                    background-color: #218838;
+                }
+
+                /* Centering Add User Link */
+                .add-user {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                .add-user a {
+                    padding: 10px 20px;
+                    background-color: #007BFF;
+                    color: white;
+                }
+
+                .add-user a:hover {
+                    background-color: #0056b3;
+                }
+            </style>
+    </body>
 
 </html>
